@@ -1,4 +1,4 @@
-package contrutor.construtorAula;
+package contrutor.Aula;
 
 import java.util.Scanner;
 

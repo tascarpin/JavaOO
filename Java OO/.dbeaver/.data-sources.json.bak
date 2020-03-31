@@ -1,10 +1,10 @@
 {
 	"folders": {},
 	"connections": {
-		"mariaDB-1712d4c96d3-5147444988c234b8": {
+		"mysql5-1712d6d43b9-2f6d4ed498cc6c59": {
 			"provider": "mysql",
-			"driver": "mariaDB",
-			"name": "MariaDB - localhost",
+			"driver": "mysql5",
+			"name": "MySQL - localhost",
 			"save-password": true,
 			"read-only": false,
 			"configuration": {
@@ -15,9 +15,6 @@
 				"type": "dev",
 				"auth-model": "native",
 				"handlers": {}
-			},
-			"custom-properties": {
-				"database.meta.separate.connection": "false"
 			}
 		}
 	},

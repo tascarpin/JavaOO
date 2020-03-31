@@ -137,20 +137,17 @@ public class Login extends JFrame implements ActionListener
 
 			try
 			{
-				//           	  Class.forName("oracle.jdbc.driver.OracleDriver");
-				//           	  Connection cn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","manager");
 				Class.forName("org.mariadb.jdbc.Driver");
 				Connection connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/java_oo?user=root&password=");
-				Statement st=connection.createStatement();
-				ResultSet rs=st.executeQuery("select * from perfil where nome='" + fldNome.getText() + "' and senha='"+ fldSenha.getPassword() + "'");
+				Statement st = connection.createStatement();				
+				ResultSet rs =st.executeQuery("select * from perfil where nome='" + fldNome.getText() + "' and senha='"+ String.copyValueOf(fldSenha.getPassword()) + "'");
 				nome=fldNome.getText();
 				if(rs.next())
 				{
 					JOptionPane.showMessageDialog(frame,"Login realizado com sucesso.");
 					dispose();
-					Login_Welcome nam = new Login_Welcome(nome);
+					new Login_Welcome(nome);
 					Login_Welcome m = new Login_Welcome();
-
 					m.setVisible(true);
 
 				}

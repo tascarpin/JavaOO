@@ -1,4 +1,4 @@
-package contrutor.construtorAula;
+package contrutor.Aula;
 
 public class Conta {
 	private double saldo;

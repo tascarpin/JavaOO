@@ -39,12 +39,9 @@ public class Register extends JFrame implements ActionListener
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				try {
-					Class.forName("com.mysql.jdbc.Driver");
-//					Connection connection = DriverManager.getConnection("mysql://localhost:3306/java_oo", "root", "");
-					
-//					Register frame = new Register();
-//					frame.setVisible(true);
+				try {					
+					Register frame = new Register();
+					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -138,41 +135,38 @@ public class Register extends JFrame implements ActionListener
 	{
 
 		Button bb=(Button)ae.getSource();
-		if(bb==btnEnviar)                  //Register
+		if(bb==btnEnviar)
 		{
 
 			try
 			{
-//				Class.forName("oracle.jdbc.driver.OracleDriver");
-//				Connection cn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","manager");
-				Class.forName("com.mysql.jdbc.Driver");
-				Connection connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/java_oo?user=root&password=");
-
+				Class.forName("org.mariadb.jdbc.Driver");
+				Connection connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/java_oo?user=root&password=");				
 				Statement st=connection.createStatement();
 				if(fldNome.getText().trim().isEmpty()||fldSenha.getText().trim().isEmpty())
 				{
-					JOptionPane.showMessageDialog(frame,"Name/Password field cannot be left blank");
+					JOptionPane.showMessageDialog(frame,"O campo nome ou senha são obrigatórios.");
 				}
 				else
 				{
-					ResultSet rs=st.executeQuery("select * from Java where name='"+fldNome.getText()+"'");
-					if(rs.next())               //duplicate name exists
+					ResultSet rs=st.executeQuery("select * from perfil where nome='"+fldNome.getText()+"'");
+					if(rs.next())
 					{
-						JOptionPane.showMessageDialog(frame,"Username already exists");
+						JOptionPane.showMessageDialog(frame,"O nome de usuário já existe.");
 					}
 					else
 					{
 						if(fldSenha.getText().equals(fldConfirmarSenha.getText()))
 						{
-							PreparedStatement ps=connection.prepareStatement("insert into Java values(?,?,?,?)");
-							ps.setString(1, fldNome.getText());
+							PreparedStatement ps=connection.prepareStatement("insert into perfil(nome, senha, contato, email) values (?,?,?,?)");
+							ps.setString(1,fldNome.getText());
 							ps.setString(2,fldSenha.getText());
 							ps.setString(3,fldContato.getText());
 							ps.setString(4,fldEmail.getText());
-							int k=ps.executeUpdate();
+							ps.executeUpdate();
 							JOptionPane.showMessageDialog(frame,"Perfil criado com sucesso.");
 							dispose();
-							Login p=new Login();
+							Login p = new Login();
 							p.setVisible(true);
 							connection.close();
 							ps.close();
@@ -187,7 +181,7 @@ public class Register extends JFrame implements ActionListener
 
 			catch(ClassNotFoundException ce)
 			{
-				System.out.println("Class nt found");
+				System.out.println("Dados não encontrados");
 			}
 			catch(SQLException se)
 			{

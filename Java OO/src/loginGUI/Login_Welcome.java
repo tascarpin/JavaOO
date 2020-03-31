@@ -95,7 +95,7 @@ public class Login_Welcome extends JFrame implements ActionListener
 		if(bb==btnVisualizar)
 		{
 			dispose();
-			View_profile nam = new View_profile(name);
+			new View_profile(name);
 			View_profile le = new View_profile();  //View Profile
 
 			le.setVisible(true);
@@ -104,7 +104,7 @@ public class Login_Welcome extends JFrame implements ActionListener
 		if(bb==btnEditar)
 		{
 			dispose();
-			Edit_proile nam=new Edit_proile(name);
+			new Edit_proile(name);
 			Edit_proile ep=new Edit_proile();   //Edit Profile
 			ep.setVisible(true);
 		}
