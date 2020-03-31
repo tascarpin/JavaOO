@@ -1,4 +1,4 @@
-package contrutores;
+package contrutor;
 
 import java.util.Scanner;
 
@@ -26,7 +26,5 @@ public class TesteConstrutor {
 		System.out.println(conta.toString());
 		
 		input.close();
-
 	}
-
 }

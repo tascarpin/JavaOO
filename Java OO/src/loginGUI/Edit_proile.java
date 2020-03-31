@@ -23,14 +23,14 @@ import javax.swing.border.EmptyBorder;
 @SuppressWarnings("serial")
 public class Edit_proile extends JFrame implements ActionListener
 {
-    public static String name;
+	public static String name;
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
+	private JTextField fldNome;
+	private JTextField fldSenha;
+	private JTextField fldContato;
+	private JTextField fldEmail;
 	private Component frame;
-	Button b,b1;
+	Button btnVoltar,btnEnviar;
 
 	/**
 	 * Launch the application.
@@ -56,76 +56,77 @@ public class Edit_proile extends JFrame implements ActionListener
 	 */
 	public Edit_proile() 
 	{
+		setTitle("Editar");
 		setResizable(false);
 		//System.out.println(name);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 386, 306);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
-		JLabel lblProfile = new JLabel("Edit Profile");
-		lblProfile.setFont(new Font("Tahoma", Font.PLAIN, 36));
-		lblProfile.setBounds(152, 11, 109, 44);
-		contentPane.add(lblProfile);
-		
-		JLabel lblName = new JLabel("Name");
-		lblName.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblName.setBounds(10, 72, 49, 31);
-		contentPane.add(lblName);
-		
-		textField = new JTextField();
-		textField.setBounds(101, 79, 207, 20);
-		textField.setEditable(false);
-		contentPane.add(textField);
-		textField.setColumns(10);
-		
-		
-		JLabel lblPassword = new JLabel("Password");
-		lblPassword.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblPassword.setBounds(10, 114, 80, 20);
-		contentPane.add(lblPassword);
-		
-		textField_1 = new JPasswordField();
-		textField_1.setBounds(101, 110, 207, 20);
-		textField_1.setEditable(true);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
-		
-		JLabel lblContactNo = new JLabel("Contact no.");
-		lblContactNo.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblContactNo.setBounds(10, 145, 88, 20);
-		contentPane.add(lblContactNo);
-		
-		textField_2 = new JTextField();
-		textField_2.setBounds(101, 141, 207, 20);
-		textField_2.setEditable(true);
-		contentPane.add(textField_2);
-		textField_2.setColumns(10);
-		
-		JLabel lblEmailid = new JLabel("Email-Id");
-		lblEmailid.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblEmailid.setBounds(10, 183, 83, 14);
-		contentPane.add(lblEmailid);
-		
-		textField_3 = new JTextField();
-		textField_3.setBounds(101, 182, 207, 20);
-		textField_3.setEditable(true);
-		contentPane.add(textField_3);
-		textField_3.setColumns(10);
-		
-		b = new Button("Back");
-		b.addActionListener(this);
-		b.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		b.setBounds(61, 228, 89, 23);
-		contentPane.add(b);
-		
-	    b1 = new Button("Submit");
-		b1.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		b1.setBounds(172, 229, 89, 23);
-		b1.addActionListener(this);
-		contentPane.add(b1);
+
+		JLabel lblPerfil = new JLabel("Editar perfil");
+		lblPerfil.setFont(new Font("Tahoma", Font.PLAIN, 36));
+		lblPerfil.setBounds(101, 11, 207, 44);
+		contentPane.add(lblPerfil);
+
+		JLabel lblNome = new JLabel("Nome");
+		lblNome.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblNome.setBounds(10, 72, 49, 31);
+		contentPane.add(lblNome);
+
+		fldNome = new JTextField();
+		fldNome.setBounds(101, 79, 207, 20);
+		contentPane.add(fldNome);
+		fldNome.setColumns(10);
+
+
+		JLabel lblSenha = new JLabel("Senha");
+		lblSenha.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblSenha.setBounds(10, 114, 80, 20);
+		contentPane.add(lblSenha);
+
+		fldSenha = new JPasswordField();
+		fldSenha.setBounds(101, 110, 207, 20);
+		fldSenha.setEditable(true);
+		contentPane.add(fldSenha);
+		fldSenha.setColumns(10);
+
+		JLabel lblContato = new JLabel("Contato");
+		lblContato.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblContato.setBounds(10, 145, 88, 20);
+		contentPane.add(lblContato);
+
+		fldContato = new JTextField();
+		fldContato.setBounds(101, 141, 207, 20);
+		fldContato.setEditable(true);
+		contentPane.add(fldContato);
+		fldContato.setColumns(10);
+
+		JLabel lblEmail = new JLabel("Email");
+		lblEmail.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblEmail.setBounds(10, 183, 83, 14);
+		contentPane.add(lblEmail);
+
+		fldEmail = new JTextField();
+		fldEmail.setBounds(101, 182, 207, 20);
+		fldEmail.setEditable(true);
+		contentPane.add(fldEmail);
+		fldEmail.setColumns(10);
+
+		btnVoltar = new Button("Voltar");
+		btnVoltar.addActionListener(this);
+		btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		btnVoltar.setBounds(61, 228, 89, 23);
+		contentPane.add(btnVoltar);
+
+		btnEnviar = new Button("Enviar");
+		btnEnviar.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		btnEnviar.setBounds(172, 229, 89, 23);
+		btnEnviar.addActionListener(this);
+		contentPane.add(btnEnviar);
+
 		try
 		{
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -134,71 +135,71 @@ public class Edit_proile extends JFrame implements ActionListener
 			ResultSet rs=st.executeQuery("select * from Java where name='"+name+"'");
 			if(rs.next())
 			{
-				textField.setText(rs.getString(1));
-				textField_1.setText(rs.getString(2));
-				textField_2.setText(rs.getString(3));
-				textField_3.setText(rs.getString(4));
-	       
-		     }
+				fldNome.setText(rs.getString(1));
+				fldSenha.setText(rs.getString(2));
+				fldContato.setText(rs.getString(3));
+				fldEmail.setText(rs.getString(4));
+
+			}
 		}
 		catch(ClassNotFoundException ce)
 		{
-			System.out.println("Class nt found");
+			System.out.println("Dados não encontrados.");
 		}
-	    catch(SQLException se)
+		catch(SQLException se)
 		{
-	    	se.printStackTrace();
+			se.printStackTrace();
 		}
-		
-		
+
+
 	}
 	public Edit_proile(String n)
 	{
 		name=n;
-		
+
 	}
 	@Override
 	public void actionPerformed(ActionEvent ae)
 	{
 		Button bb=(Button)ae.getSource();
-		if(bb==b1)
+		if(bb==btnEnviar)
 		{
-			if(textField_1.getText().trim().isEmpty())
+			if(fldSenha.getText().trim().isEmpty())
 			{
-				  JOptionPane.showMessageDialog(frame,"Password field cannot be left blank");
+				JOptionPane.showMessageDialog(frame,"Porfavor, é obrigatório criar uma senha.");
 			}
 			else
 			{
-			   try
-			   {
-				Class.forName("oracle.jdbc.driver.OracleDriver");
-				Connection cn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","manager");
-				PreparedStatement ps=cn.prepareStatement("update Java set name=(?),password=(?),contact=(?),email=(?) where name='"+name+"'");
-				ps.setString(1,textField.getText());
-				ps.setString(2, textField_1.getText());
-				ps.setString(3, textField_2.getText());
-				ps.setString(4, textField_3.getText());
-				ps.executeUpdate();
-				JOptionPane.showMessageDialog(frame,"Changes successfully updated");
-			   }
-			
-			   catch(ClassNotFoundException ce)
-			   {
-				System.out.println("Class nt found");
-			   } 
-		       catch(SQLException se)
-			   {
-		    	se.printStackTrace();
-			   }
+				try
+				{
+					Class.forName("oracle.jdbc.driver.OracleDriver");
+					Connection cn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","manager");
+					PreparedStatement ps=cn.prepareStatement("update Java set name=(?),password=(?),contact=(?),email=(?) where name='"+name+"'");
+					ps.setString(1,fldNome.getText());
+					ps.setString(2, fldSenha.getText());
+					ps.setString(3, fldContato.getText());
+					ps.setString(4, fldEmail.getText());
+					ps.executeUpdate();
+					JOptionPane.showMessageDialog(frame,"Atualização realizada com sucesso.");
+				}
+
+				catch(ClassNotFoundException ce)
+				{
+					System.out.println("Dados não encontrados.");
+				} 
+				catch(SQLException se)
+				{
+					se.printStackTrace();
+				}
 			}
-			
+
 		}
-		if(bb==b)
+		if(bb==btnVoltar)
 		{
 			dispose();
 			Login_Welcome m=new Login_Welcome();          //gets us back to Login_Welcome 
 			m.setVisible(true);
 		}
-		
-   }
+
+	}
 }

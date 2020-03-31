@@ -57,8 +57,7 @@ public class TestePolimorfismoGUI  {
 		
 		//Adicionando o panel ao frame
 		frame.getContentPane().add(contentPanel, BorderLayout.NORTH);						
-		frame.getContentPane().add(fldArea, BorderLayout.CENTER);
-		
+		frame.getContentPane().add(fldArea, BorderLayout.CENTER);		
 		frame.setVisible(true);
 			
 		btnValor.addActionListener(new ActionListener() {

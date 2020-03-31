@@ -1,4 +1,4 @@
-package contrutores;
+package contrutor;
 
 /*
  * Percebe-se aqui que a classe conta desse pacote não entra em conflito com a classe conta do pacote "abstracao_classe" 
