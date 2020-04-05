@@ -23,7 +23,7 @@ import javax.swing.border.EmptyBorder;
 @SuppressWarnings("serial")
 public class Edit_proile extends JFrame implements ActionListener
 {
-	public static String name;
+	public static String nome;
 	private JPanel contentPane;
 	private JTextField fldNome;
 	private JTextField fldSenha;
@@ -129,10 +129,10 @@ public class Edit_proile extends JFrame implements ActionListener
 
 		try
 		{
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			Connection cn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","manager");
-			Statement st=cn.createStatement();
-			ResultSet rs=st.executeQuery("select * from Java where name='"+name+"'");
+			Class.forName("org.mariadb.jdbc.Driver");
+			Connection connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/java_oo?user=root&password=");
+			Statement st=connection.createStatement();
+			ResultSet rs=st.executeQuery("select nome, senha, contato, email from perfil where nome='"+ nome +"'");
 			if(rs.next())
 			{
 				fldNome.setText(rs.getString(1));
@@ -153,11 +153,12 @@ public class Edit_proile extends JFrame implements ActionListener
 
 
 	}
+	
 	public Edit_proile(String n)
 	{
-		name=n;
-
+		nome=n;
 	}
+	
 	@Override
 	public void actionPerformed(ActionEvent ae)
 	{
@@ -172,15 +173,18 @@ public class Edit_proile extends JFrame implements ActionListener
 			{
 				try
 				{
-					Class.forName("oracle.jdbc.driver.OracleDriver");
-					Connection cn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","manager");
-					PreparedStatement ps=cn.prepareStatement("update Java set name=(?),password=(?),contact=(?),email=(?) where name='"+name+"'");
+					Class.forName("org.mariadb.jdbc.Driver");
+					Connection connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/java_oo?user=root&password=");
+					PreparedStatement ps=connection.prepareStatement("update perfil set nome=(?),senha=(?), contato=(?), email=(?) where nome='"+nome+"'");
 					ps.setString(1,fldNome.getText());
 					ps.setString(2, fldSenha.getText());
 					ps.setString(3, fldContato.getText());
 					ps.setString(4, fldEmail.getText());
 					ps.executeUpdate();
 					JOptionPane.showMessageDialog(frame,"Atualização realizada com sucesso.");
+					dispose();
+					Login_Welcome m=new Login_Welcome(); 
+					m.setVisible(true);
 				}
 
 				catch(ClassNotFoundException ce)
@@ -197,7 +201,7 @@ public class Edit_proile extends JFrame implements ActionListener
 		if(bb==btnVoltar)
 		{
 			dispose();
-			Login_Welcome m=new Login_Welcome();          //gets us back to Login_Welcome 
+			Login_Welcome m=new Login_Welcome(); 
 			m.setVisible(true);
 		}
 

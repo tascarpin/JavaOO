@@ -14,13 +14,13 @@ import javax.swing.border.EmptyBorder;
 @SuppressWarnings("serial")
 public class Login_Welcome extends JFrame implements ActionListener 
 {
-	public static String name;
+	public static String nome;
 	private JPanel contentPane;
 	Button btnVisualizar,btnEditar,btnLogOut;
 
 	public Login_Welcome(String n)
 	{
-		name=n;
+		nome=n;
 	}
 
 	/**
@@ -56,7 +56,7 @@ public class Login_Welcome extends JFrame implements ActionListener
 		lblHiwelcome.setBounds(99, 11, 209, 62);
 		lblHiwelcome.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		String mssge="Hi ";
-		mssge+=name;
+		mssge+=nome;
 		mssge+="..Welcome!!!";
 		lblHiwelcome.setText(mssge);
 
@@ -95,7 +95,7 @@ public class Login_Welcome extends JFrame implements ActionListener
 		if(bb==btnVisualizar)
 		{
 			dispose();
-			new View_profile(name);
+			new View_profile(nome);
 			View_profile le = new View_profile();  //View Profile
 
 			le.setVisible(true);
@@ -104,7 +104,7 @@ public class Login_Welcome extends JFrame implements ActionListener
 		if(bb==btnEditar)
 		{
 			dispose();
-			new Edit_proile(name);
+			new Edit_proile(nome);
 			Edit_proile ep=new Edit_proile();   //Edit Profile
 			ep.setVisible(true);
 		}

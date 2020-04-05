@@ -140,12 +140,10 @@ public class View_profile extends JFrame implements ActionListener
 
 		try
 		{
-			//			Class.forName("oracle.jdbc.driver.OracleDriver");
-			//			Connection connection=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","manager");
 			Class.forName("org.mariadb.jdbc.Driver");
 			Connection connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/java_oo?user=root&password=");
 			Statement st=connection.createStatement();
-			ResultSet rs=st.executeQuery("select * from perfil where name='"+nome+"'");
+			ResultSet rs=st.executeQuery("select nome, senha, contato, email from perfil where nome='"+nome+"'");
 			if(rs.next())
 			{
 				fldNome.setText(rs.getString(1));

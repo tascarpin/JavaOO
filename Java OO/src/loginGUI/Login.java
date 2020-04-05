@@ -149,7 +149,6 @@ public class Login extends JFrame implements ActionListener
 					new Login_Welcome(nome);
 					Login_Welcome m = new Login_Welcome();
 					m.setVisible(true);
-
 				}
 				else
 				{
