@@ -1,4 +1,4 @@
-package heranca;
+package heranca.exemplo1;
 
 public class Jogador extends Pessoa {
 
@@ -8,4 +8,4 @@ public class Jogador extends Pessoa {
 		System.out.println("Ainda joga? " + aindaJoga);
 	}
 
-}
+}	

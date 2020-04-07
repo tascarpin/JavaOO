@@ -1,4 +1,4 @@
-package heranca;
+package heranca.exemplo1;
 
 public class TesteHeranca {
 
