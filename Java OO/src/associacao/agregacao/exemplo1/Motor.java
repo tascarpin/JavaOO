@@ -1,4 +1,4 @@
-package associacoa.composicao;
+package associacao.agregacao.exemplo1;
 
 public class Motor {
 

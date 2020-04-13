@@ -1,4 +1,4 @@
-package associacoa.agregacao.exemplo1;
+package associacao.agregacao.exemplo1;
 
 public class Automovel {
 
