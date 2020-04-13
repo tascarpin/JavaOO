@@ -16,7 +16,7 @@ public class TestePolimorfismo3 {
 		double valor = input.nextDouble();
 		
 		//Criando o objeto da classe Conta Corrente com a passagem de parâmetros para o construtor 
-		Conta conta = new ContaCorrente("Tassio", numConta, valor);			
+		Conta conta = new ContaFisica("Tassio", numConta, valor);			
 		
 		System.out.println(conta.toString() + "\n");
 		

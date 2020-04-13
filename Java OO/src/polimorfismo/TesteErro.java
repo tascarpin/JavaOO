@@ -17,7 +17,7 @@ public class TesteErro {
 		String valor = input.nextLine();	
 		
 		//Outra forma de criar o objeto conta corrente
-		Conta conta = new ContaCorrente("Tassio", numConta, Double.parseDouble(valor));		
+		Conta conta = new ContaFisica("Tassio", numConta, Double.parseDouble(valor));		
 		
 		System.out.println(conta.toString() + "\n");
 		

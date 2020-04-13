@@ -16,7 +16,7 @@ public class TestePolimorfismo4 {
 		double valor = input.nextDouble();	
 		
 		//Outra forma de criar o objeto conta corrente
-		ContaCorrente conta = new ContaCorrente("Tassio", numConta, valor);		
+		ContaFisica conta = new ContaFisica("Tassio", numConta, valor);		
 		
 		System.out.println(conta.toString() + "\n");
 		

@@ -6,6 +6,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry excluding="julian/java_oo2/Exercicio_13-04/src/Exercicio01/|julian/java_oo2/Exercicio_13-04/src/Exercicio01/" kind="src" path="gitHubAlunos"/>
 	<classpathentry kind="lib" path="C:/Users/pinhe/eclipse Java/drivers/maven/maven-central/org.mariadb.jdbc/mariadb-java-client-2.6.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

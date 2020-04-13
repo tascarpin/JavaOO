@@ -1,9 +1,9 @@
 package polimorfismo;
 
-public class ContaCorrente extends Conta{
+public class ContaFisica extends Conta{
 	private String titular = null;
 
-	public ContaCorrente(String nome, String numConta, double valor) {
+	public ContaFisica(String nome, String numConta, double valor) {
 		super(numConta, valor);
 		this.titular = nome;
 	}
