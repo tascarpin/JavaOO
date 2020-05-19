@@ -1,7 +1,6 @@
 package loginGUI.aula;
 
 import java.awt.Button;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,7 +10,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -30,28 +28,7 @@ public class Edit_profile implements ActionListener{
 	private JTextField fldSenha;
 	private JTextField fldContato;
 	private JTextField fldEmail;
-	Button btnVoltar,btnEnviar;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Edit_profile window = new Edit_profile();
-					window.frmEditProfile.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	public Edit_profile(String n)
-	{
-		nome=n;
-	}
+	private Button btnVoltar,btnEnviar;
 	
 	/**
 	 * Create the application.

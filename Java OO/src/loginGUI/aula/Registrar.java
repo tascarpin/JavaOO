@@ -26,23 +26,8 @@ public class Registrar implements ActionListener{
 	private JPanel contentPane;
 	private JTextField fldNome, fldSenha, fldConfirmarSenha, fldContato, fldEmail;
 	private JLabel lblRegistrar, lblNome, lblSenha, lblConfirmarSenha, lblContato, lblEmail;
-	Button btnEnviar,btnVoltar;
+	private Button btnEnviar,btnVoltar;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Registrar window = new Registrar();
-					window.frmRegistrar.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the application.

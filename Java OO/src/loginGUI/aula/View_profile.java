@@ -1,7 +1,6 @@
 package loginGUI.aula;
 
 import java.awt.Button;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,7 +9,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -27,27 +25,6 @@ public class View_profile implements ActionListener {
 	private JTextField fldContato;
 	private JTextField fldEmail;
 	private Button btnVoltar,btnSair;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					View_profile window = new View_profile();
-					window.frmViewProfile.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	public View_profile(String n)
-	{
-		nome=n;		
-	}
 	
 	/**
 	 * Create the application.

@@ -1,7 +1,6 @@
 package loginGUI.aula;
 
 import java.awt.Button;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,26 +18,6 @@ public class Login_welcome implements ActionListener {
 	private JLabel lblHiwelcome;
 	private Button btnVisualizar,btnEditar,btnLogOut;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Login_welcome window = new Login_welcome();
-					window.frmLoginWelcome.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-	
-//	public Login_welcome(String n)
-//	{
-//		nome=n;
-//	}
 
 	/**
 	 * Create the application.
