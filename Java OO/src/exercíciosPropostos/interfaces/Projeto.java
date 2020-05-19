@@ -1,12 +1,14 @@
-package exercíciosPropostos.heranca;
+package exercíciosPropostos.interfaces;
 
-public class Projeto{
-	private String nomeProjeto, descricao, responsavel;
-
-	public Projeto(String nomeProjeto, String descricao, String responsavel) {
+public class Projeto {
+	private String nomeProjeto, descricao;
+	private IProjeto responsavel;
+	
+	public Projeto(String nomeProjeto, String descricao, IProjeto responsavel) {
 		this.nomeProjeto = nomeProjeto;
 		this.descricao = descricao;
-		this.responsavel = responsavel;
+		this.responsavel = responsavel;		
+		responsavel.adicionaProjeto(this);
 	}
 
 	public String getNomeProjeto() {
@@ -25,19 +27,17 @@ public class Projeto{
 		this.descricao = descricao;
 	}
 
-	public String getResponsavel() {
+	public IProjeto getResponsavel() {
 		return responsavel;
 	}
 
-	public void setResponsavel(String responsavel) {
+	public void setResponsavel(IProjeto responsavel) {
 		this.responsavel = responsavel;
 	}
 
 	@Override
 	public String toString() {
-		return "Projeto [nomeProjeto=" + nomeProjeto + ", descricao=" + descricao + ", responsavel=" + responsavel
-				+ "]";
+		return "Projeto [nomeProjeto=" + nomeProjeto + ", descricao=" + descricao + "]";
 	}
-	
 	
 }

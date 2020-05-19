@@ -1,8 +1,8 @@
-package loginGUI;
+package loginGUI.aula;
 
+import java.awt.BorderLayout;
 import java.awt.Button;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -21,48 +21,65 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-@SuppressWarnings("serial")
-public class Login extends JFrame implements ActionListener 
-{
+public class Login implements ActionListener {
 
+	public JFrame frmLogin;
 	private JPanel contentPane;
+	private JLabel lblLogin, lblNome, lblSenha;
 	private JTextField fldNome;
 	private JPasswordField fldSenha;
-	Button btnRegistrar,btnLogin,btnSair;
-	String nome;
-	private Component frame;
+	private Button btnRegistrar, btnLogin, btnSair;
 
 	/**
-	 * Create the frame.
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Login window = new Login();
+					window.frmLogin.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
 	 */
 	public Login() {
-		
-		/* INICIALIZANDO OS COMPONENTES */
+		initialize();
+	}
 
-		//Criando os componentes
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		//Inicializando os componentes
+		frmLogin = new JFrame();
 		contentPane = new JPanel();
-		JLabel lblLogin = new JLabel("LOGIN");
-		JLabel lblNome = new JLabel("Nome");			
-		JLabel lblSenha = new JLabel("Senha");
+		lblLogin = new JLabel("Login");
+		lblNome = new JLabel("Nome");
+		lblSenha = new JLabel("Senha");
 		fldNome = new JTextField();
 		fldSenha = new JPasswordField();
 		btnRegistrar = new Button("Registrar");
-		btnLogin= new Button("Login");
-		btnSair= new Button("Sair");
-
-		/*------------------------------------------------*/
-
-		/* CONFIGURANDO DOS COMPONENTES */
-
-		//Configurando o frame		
-		setTitle("Login");
-		setResizable(false);
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		setContentPane(contentPane);
-
-		//Configurando o contentPane
+		btnLogin = new Button("Login");
+		btnSair = new Button("Sair");
 		
+		//Configurando o frmLogin
+		frmLogin.setTitle("Login");
+		frmLogin.setResizable(false);
+		frmLogin.setBounds(100, 100, 448, 332);
+		frmLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmLogin.getContentPane().setLayout(new BorderLayout(0, 0));
+		frmLogin.setContentPane(contentPane);
+		
+		/*Configurando os componentes*/
+		
+		//Configurando o contentPane
 		contentPane.setMaximumSize(new Dimension(2147483647, 2147483647));
 		contentPane.setForeground(Color.BLACK);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));				
@@ -109,7 +126,6 @@ public class Login extends JFrame implements ActionListener
 
 
 		/* Adicionando os componentes do contentPane */
-
 		contentPane.add(lblLogin);
 		contentPane.add(lblNome);
 		contentPane.add(lblSenha);
@@ -118,20 +134,18 @@ public class Login extends JFrame implements ActionListener
 		contentPane.add(btnRegistrar);
 		contentPane.add(btnLogin);
 		contentPane.add(btnSair);
+		
 	}
-	
+
 	@Override
-	public void actionPerformed(ActionEvent ae)
-	{
-		Button bb=(Button)ae.getSource();
-		if(bb==btnRegistrar)
-		{
-			dispose();
-			Register re = new Register();
-			re.setVisible(true);
-
+	public void actionPerformed(ActionEvent e) {
+		Button bb = (Button)e.getSource();
+		if(bb==btnRegistrar) {
+			frmLogin.dispose();
+			Registrar re = new Registrar();
+			re.frmRegistrar.setVisible(true);
 		}
-
+		
 		if(bb==btnLogin)
 		{
 
@@ -141,18 +155,18 @@ public class Login extends JFrame implements ActionListener
 				Connection connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/java_oo?user=root&password=");
 				Statement st = connection.createStatement();				
 				ResultSet rs =st.executeQuery("select * from perfil where nome='" + fldNome.getText() + "' and senha='"+ String.copyValueOf(fldSenha.getPassword()) + "'");
-				nome=fldNome.getText();
+				String nome=fldNome.getText();
 				if(rs.next())
 				{
-					JOptionPane.showMessageDialog(frame,"Login realizado com sucesso.");
-					dispose();
-					new Login_Welcome(nome);
-					Login_Welcome m = new Login_Welcome();
-					m.setVisible(true);
+					JOptionPane.showMessageDialog(frmLogin,"Login realizado com sucesso.");
+					frmLogin.dispose();
+					Login_welcome.nome = nome;
+					Login_welcome m = new Login_welcome();
+					m.frmLoginWelcome.setVisible(true);
 				}
 				else
 				{
-					JOptionPane.showMessageDialog(frame,"Usuario ou senha incorreto.");
+					JOptionPane.showMessageDialog(frmLogin,"Usuario ou senha incorreto.");
 				}
 				connection.close();
 				st.close();
@@ -168,26 +182,7 @@ public class Login extends JFrame implements ActionListener
 		}
 
 		if(bb==btnSair)
-			System.exit(0);
-
+			System.exit(0);		
 	}
 
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Login frame = new Login();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 }
-
-

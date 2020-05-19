@@ -1,4 +1,4 @@
-package loginGUI;
+package loginGUI.exemplo;
 
 import java.awt.Button;
 import java.awt.EventQueue;
@@ -104,8 +104,8 @@ public class Login_Welcome extends JFrame implements ActionListener
 		if(bb==btnEditar)
 		{
 			dispose();
-			new Edit_proile(nome);
-			Edit_proile ep=new Edit_proile();   //Edit Profile
+			new Edit_profile(nome);
+			Edit_profile ep=new Edit_profile();   //Edit Profile
 			ep.setVisible(true);
 		}
 

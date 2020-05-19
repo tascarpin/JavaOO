@@ -1,4 +1,4 @@
-package exercíciosPropostos.heranca;
+package exercíciosPropostos.interfaces;
 
 public class TesteHeranca {
 
@@ -13,20 +13,11 @@ public class TesteHeranca {
 		
 		Coordenador coordenador = new Coordenador("Tassio", "123456789-10", 10, 12345, 2500);
 		//Funcionario programador = new Programador("Tassio", "123456789-10", 10, 123456, 
-		//		2500.00, null, "Java", null);
-		
-		
-		System.out.println("TESTE HERANÇA EX01.\n");
+		//		2500.00, null, "Java", null);		
 
-		Projeto projeto = new Projeto("Desenvolvimento IA", 
-				"Professor Tassio", 
-				"Avalição dos algoritmos de Machine Learning");
-		coordenador.adicionaProjeto(projeto);
-		
-		projeto = new Projeto("Business Intelligence", "Tassio", "Data Analitcs");
-		coordenador.adicionaProjeto(projeto);
-		
-		
+		new Projeto("Desenvolvimento IA", "Avalição dos algoritmos de Machine Learning", coordenador);
+		new Projeto("Business Intelligence", "Data Analitcs", coordenador);
+	
 		System.out.println("Nome Funcionário: "+ coordenador.getNome());
 		System.out.println("CPF Funcionário: "+ coordenador.getCpf());
 		System.out.println("Tempo de Serviço: "+ coordenador.tempoDeServico +" anos.");
@@ -35,8 +26,8 @@ public class TesteHeranca {
 		
 		
 		System.out.println(coordenador.toString());		
-		System.out.println();
-		coordenador.imprimirProjetos();
+//		System.out.println();
+//		coordenador.imprimirProjetos();
 		
 	}
 

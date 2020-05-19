@@ -1,8 +1,8 @@
-package somaGUI;
+package somaGUI.exemplo;
 
 import javax.swing.JOptionPane; 
 
-public class somaGUI {
+public class SomaGUI {
    
 	public static void main(String[] args){
       

@@ -1,8 +1,8 @@
-package polimorfismo;
+package polimorfismo.exemplo1;
 
 import java.util.Scanner;
 
-public class TesteErro {
+public class TestePolimorfismo3 {
 
 	public static void main(String[] args) {
 		
@@ -13,22 +13,19 @@ public class TesteErro {
 		System.out.println("Porfavor entre com o número da conta:");
 		String numConta = input.nextLine();
 		System.out.println("Porfavor entre com o valor do depósito:");
-
-		String valor = input.nextLine();	
+		double valor = input.nextDouble();
 		
-		//Outra forma de criar o objeto conta corrente
-		Conta conta = new ContaFisica("Tassio", numConta, Double.parseDouble(valor));		
+		//Criando o objeto da classe Conta Corrente com a passagem de parâmetros para o construtor 
+		Conta conta = new ContaFisica("Tassio", numConta, valor);			
 		
 		System.out.println(conta.toString() + "\n");
 		
 		//Entrada de dados
 		System.out.println("Porfavor entre com o valor do saque:");
-		valor = input.nextLine();
-		valor = input.next();
-						
-		/* ERRO */
-		//Esse método pertence a Conta corrente e não está disponível para objetos Conta
-		//conta.saque(Double.parseDouble(valor), 0.15);
+		valor = input.nextDouble();
+		
+		//Envio de menssagem para o objeto 
+		conta.saque(valor);
 		
 		//Imprimi os dados da conta
 		System.out.println(conta.toString());

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.2.4" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
   realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
-  <class id="1" language="java" name="polimorfismo.TestePolimorfismo1" project="Java OO" 
-    file="/Java OO/src/polimorfismo/TestePolimorfismo1.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="1" language="java" name="polimorfismo.exemplo1.TestePolimorfismo1" project="Java OO" 
+    file="/Java OO/src/polimorfismo/exemplo1/TestePolimorfismo1.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="123" y="206"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -10,8 +10,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="polimorfismo.Conta" project="Java OO" file="/Java OO/src/polimorfismo/Conta.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
+  <class id="2" language="java" name="polimorfismo.exemplo1.Conta" project="Java OO" 
+    file="/Java OO/src/polimorfismo/exemplo1/Conta.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="581" y="236"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -19,8 +19,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="polimorfismo.ContaFisica" project="Java OO" 
-    file="/Java OO/src/polimorfismo/ContaFisica.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="3" language="java" name="polimorfismo.exemplo1.ContaFisica" project="Java OO" 
+    file="/Java OO/src/polimorfismo/exemplo1/ContaFisica.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="437" y="495"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -28,8 +28,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="polimorfismo.TesteErro" project="Java OO" 
-    file="/Java OO/src/polimorfismo/TesteErro.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="4" language="java" name="polimorfismo.exemplo1.TesteErro" project="Java OO" 
+    file="/Java OO/src/polimorfismo/exemplo1/TesteErro.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="118" y="70"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -37,8 +37,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="polimorfismo.TestePolimorfismo4" project="Java OO" 
-    file="/Java OO/src/polimorfismo/TestePolimorfismo4.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="5" language="java" name="polimorfismo.exemplo1.TestePolimorfismo4" project="Java OO" 
+    file="/Java OO/src/polimorfismo/exemplo1/TestePolimorfismo4.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="124" y="544"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -46,8 +46,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="polimorfismo.TestePolimorfismo3" project="Java OO" 
-    file="/Java OO/src/polimorfismo/TestePolimorfismo3.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="6" language="java" name="polimorfismo.exemplo1.TestePolimorfismo3" project="Java OO" 
+    file="/Java OO/src/polimorfismo/exemplo1/TestePolimorfismo3.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="124" y="435"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -55,8 +55,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="7" language="java" name="polimorfismo.TestePolimorfismo2" project="Java OO" 
-    file="/Java OO/src/polimorfismo/TestePolimorfismo2.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="7" language="java" name="polimorfismo.exemplo1.TestePolimorfismo2" project="Java OO" 
+    file="/Java OO/src/polimorfismo/exemplo1/TestePolimorfismo2.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="124" y="326"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -64,8 +64,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="polimorfismo.TestePolimorfismoGUI" project="Java OO" 
-    file="/Java OO/src/polimorfismo/TestePolimorfismoGUI.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="8" language="java" name="polimorfismo.exemplo1.TestePolimorfismoGUI" project="Java OO" 
+    file="/Java OO/src/polimorfismo/exemplo1/TestePolimorfismoGUI.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="127" y="743"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -73,8 +73,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="polimorfismo.ContaJuridica" project="Java OO" 
-    file="/Java OO/src/polimorfismo/ContaJuridica.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="9" language="java" name="polimorfismo.exemplo1.ContaJuridica" project="Java OO" 
+    file="/Java OO/src/polimorfismo/exemplo1/ContaJuridica.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="737" y="492"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -83,11 +83,11 @@
     </display>  
   </class>  
   <generalization id="10">    
-    <end type="SOURCE" refId="9"/>    
+    <end type="SOURCE" refId="3"/>    
     <end type="TARGET" refId="2"/>  
   </generalization>  
   <generalization id="11">    
-    <end type="SOURCE" refId="3"/>    
+    <end type="SOURCE" refId="9"/>    
     <end type="TARGET" refId="2"/>  
   </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 

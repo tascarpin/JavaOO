@@ -1,10 +1,25 @@
 {
 	"folders": {},
 	"connections": {
-		"mysql5-1712d6d43b9-2f6d4ed498cc6c59": {
+		"mariaDB-1712e48760a-689439527ffa26df": {
 			"provider": "mysql",
-			"driver": "mysql5",
-			"name": "MySQL - localhost",
+			"driver": "mariaDB",
+			"name": "MariaDB - localhost",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"url": "jdbc:mysql://localhost:3306/",
+				"home": "MySQL Binaries",
+				"type": "dev",
+				"auth-model": "native"
+			}
+		},
+		"mariaDB-171e1edc497-3f92ee51ccccb179": {
+			"provider": "mysql",
+			"driver": "mariaDB",
+			"name": "MariaDB - localhost 2",
 			"save-password": true,
 			"read-only": false,
 			"configuration": {

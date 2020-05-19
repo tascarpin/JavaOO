@@ -13,8 +13,7 @@
 				"url": "jdbc:mysql://localhost:3306/",
 				"home": "MySQL Binaries",
 				"type": "dev",
-				"auth-model": "native",
-				"handlers": {}
+				"auth-model": "native"
 			}
 		}
 	},

@@ -1,7 +1,6 @@
-package loginGUI;
+package loginGUI.aula;
 
 import java.awt.Button;
-import java.awt.Component;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -20,18 +19,14 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-@SuppressWarnings("serial")
-public class Register extends JFrame implements ActionListener
-{
+@SuppressWarnings("unused")
+public class Registrar implements ActionListener{
 
+	public JFrame frmRegistrar;
 	private JPanel contentPane;
-	private JTextField fldNome;
-	private JTextField fldSenha;
-	private JTextField fldConfirmarSenha;
-	private JTextField fldContato;
-	private JTextField fldEmail;
+	private JTextField fldNome, fldSenha, fldConfirmarSenha, fldContato, fldEmail;
+	private JLabel lblRegistrar, lblNome, lblSenha, lblConfirmarSenha, lblContato, lblEmail;
 	Button btnEnviar,btnVoltar;
-	private Component frame;
 
 	/**
 	 * Launch the application.
@@ -39,9 +34,9 @@ public class Register extends JFrame implements ActionListener
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				try {					
-					Register frame = new Register();
-					frame.setVisible(true);
+				try {
+					Registrar window = new Registrar();
+					window.frmRegistrar.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -50,35 +45,46 @@ public class Register extends JFrame implements ActionListener
 	}
 
 	/**
-	 * Create the frame.
+	 * Create the application.
 	 */
-	public Register() 
-	{
-		setTitle("Registrar");
-		setResizable(false);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 449, 384);
+	public Registrar() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frmRegistrar = new JFrame();
+		frmRegistrar.setTitle("Registrar");
+		frmRegistrar.setResizable(false);
+		frmRegistrar.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmRegistrar.setBounds(100, 100, 508, 372);
+		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
+		
+		//Adicionando o contentPane ao frmRegistrar
+		frmRegistrar.setContentPane(contentPane);
+		
 		contentPane.setLayout(null);
-
-		JLabel lblRegistrar = new JLabel("Registrar");
+		
+		lblRegistrar = new JLabel("Registrar");
 		lblRegistrar.setFont(new Font("Tahoma", Font.PLAIN, 36));
 		lblRegistrar.setBounds(140, 17, 205, 44);
 		contentPane.add(lblRegistrar);
 
-		JLabel lblNome = new JLabel("Nome");
+		lblNome = new JLabel("Nome");
 		lblNome.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblNome.setBounds(53, 66, 52, 30);
 		contentPane.add(lblNome);
 
 		fldNome = new JTextField();
 		fldNome.setBounds(198, 73, 176, 20);
-		contentPane.add(fldNome);
 		fldNome.setColumns(10);
+		contentPane.add(fldNome);
 
-		JLabel lblSenha = new JLabel("Senha");
+		lblSenha = new JLabel("Senha");
 		lblSenha.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblSenha.setBounds(53, 169, 67, 30);
 		contentPane.add(lblSenha);
@@ -120,7 +126,7 @@ public class Register extends JFrame implements ActionListener
 		contentPane.add(fldEmail);
 		fldEmail.setColumns(10);
 
-		btnEnviar= new Button("Submit");
+		btnEnviar= new Button("Enviar");
 		btnEnviar.addActionListener(this);
 		btnEnviar.setBounds(250, 269, 67, 23);
 		contentPane.add(btnEnviar);
@@ -129,30 +135,28 @@ public class Register extends JFrame implements ActionListener
 		btnVoltar.addActionListener(this);
 		btnVoltar.setBounds(125, 269, 67, 23);
 		contentPane.add(btnVoltar);
+		
 	}
+
 	@Override
-	public void actionPerformed(ActionEvent ae) 
-	{
-
-		Button bb=(Button)ae.getSource();
-		if(bb==btnEnviar)
-		{
-
-			try
-			{
+	public void actionPerformed(ActionEvent e) {
+		Button bb = (Button)e.getSource();
+		if(bb==btnEnviar) {
+			try {
 				Class.forName("org.mariadb.jdbc.Driver");
-				Connection connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/java_oo?user=root&password=");				
+				Connection connection = 
+						DriverManager.getConnection("jdbc:mariadb://localhost:3306/java_oo?user=root&password=");
 				Statement st=connection.createStatement();
 				if(fldNome.getText().trim().isEmpty()||fldSenha.getText().trim().isEmpty())
 				{
-					JOptionPane.showMessageDialog(frame,"O campo nome ou senha são obrigatórios.");
+					JOptionPane.showMessageDialog(frmRegistrar,"O campo nome ou senha são obrigatórios.");
 				}
 				else
 				{
 					ResultSet rs=st.executeQuery("select * from perfil where nome='"+fldNome.getText()+"'");
 					if(rs.next())
 					{
-						JOptionPane.showMessageDialog(frame,"O nome de usuário já existe.");
+						JOptionPane.showMessageDialog(frmRegistrar,"O nome de usuário já existe.");
 					}
 					else
 					{
@@ -164,21 +168,21 @@ public class Register extends JFrame implements ActionListener
 							ps.setString(3,fldContato.getText());
 							ps.setString(4,fldEmail.getText());
 							ps.executeUpdate();
-							JOptionPane.showMessageDialog(frame,"Perfil criado com sucesso.");
-							dispose();
+							JOptionPane.showMessageDialog(frmRegistrar,"Perfil criado com sucesso.");
+							frmRegistrar.dispose();
 							Login p = new Login();
-							p.setVisible(true);
+							p.frmLogin.setVisible(true);
 							connection.close();
 							ps.close();
 						}
 						else
 						{
-							JOptionPane.showMessageDialog(frame,"Senha incorreta.");
+							JOptionPane.showMessageDialog(frmRegistrar,"Senha incorreta.");
 						}
 					}
+				
 				}
 			}
-
 			catch(ClassNotFoundException ce)
 			{
 				System.out.println("Dados não encontrados");
@@ -187,13 +191,13 @@ public class Register extends JFrame implements ActionListener
 			{
 				se.printStackTrace();
 			}
-
 		}
+		
 		if(bb==btnVoltar)
 		{
-			dispose();
+			frmRegistrar.dispose();
 			Login p=new Login();         //gets us back to Page1 ie. Login page
-			p.setVisible(true);
+			p.frmLogin.setVisible(true);
 		}
 
 	}

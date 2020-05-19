@@ -1,4 +1,4 @@
-package polimorfismo;
+package polimorfismo.exemplo1;
 
 /*
  * Percebe-se aqui que a classe conta desse pacote não entra em conflito com a classe conta do pacote "abstracao_classe" 
@@ -11,7 +11,7 @@ public class Conta {
 	public Conta() {
 
 	}
-	
+
 	//Sobrecarga do contrutor: Mesma assinatura(independe do retorno da método) do métodos porém com lista de argumentos diferentes	
 	public Conta(String numConta, double saldo) {
 		this.numConta = numConta;

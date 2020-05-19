@@ -1,33 +1,28 @@
-package exercíciosPropostos.heranca;
+package exercíciosPropostos.interfaces;
 
 import java.util.List;
-
 import java.util.ArrayList;
 
-public class Coordenador extends Funcionario{
+public class Coordenador extends Funcionario implements IProjeto {
 	private List<Projeto> projetos = new ArrayList<Projeto>();
 
 	public Coordenador(String nome, String cpf, int tempoDeServico, int matricula, double salarioBase) {
 		super(nome, cpf, tempoDeServico, matricula, salarioBase);
 	}
-
-	public boolean adicionaProjeto(Projeto projeto) {
+	
+	public void adicionaProjeto(Projeto projeto) {
 		try {
 			projetos.add(projeto);
-			return true;
 		} catch (Exception e) {
 			System.out.println(e.toString());
-			return false;
 		}		
 	}
 	
-	public boolean removeProjeto(Projeto projeto) {		
+	public void removeProjeto(Projeto projeto) {		
 		try {
 			projetos.remove(projeto);
-			return true;
 		} catch (Exception e) {
 			System.out.println(e.toString());
-			return false;
 		}	
 	}
 	

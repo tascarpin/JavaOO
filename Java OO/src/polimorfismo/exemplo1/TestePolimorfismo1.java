@@ -1,4 +1,4 @@
-package polimorfismo;
+package polimorfismo.exemplo1;
 
 import java.util.Scanner;
 

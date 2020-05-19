@@ -1,4 +1,4 @@
-package polimorfismo;
+package polimorfismo.exemplo1;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -6,7 +6,6 @@ import javax.swing.JTextArea;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import javax.swing.JTextField;
-import polimorfismo.TestePolimorfismoGUI;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JButton;
@@ -50,7 +49,7 @@ public class TestePolimorfismoGUI  {
 		fldArea.setColumns(10);
 		fldArea.setText(conta.toString() + "\n");
 		
-		//Adionanando os componentes no panel
+		//Adicionando os componentes no painel panel
 		contentPanel.add(lblValor);
 		contentPanel.add(fldValor);
 		contentPanel.add(btnValor);
@@ -93,6 +92,5 @@ public class TestePolimorfismoGUI  {
 				}
 			}
 		});
-	}
-	
+	}	
 }

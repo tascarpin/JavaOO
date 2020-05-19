@@ -1,11 +1,7 @@
-package loginGUI;
+package loginGUI.aula;
 
 import java.awt.Button;
 import java.awt.EventQueue;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,33 +10,61 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import javax.swing.JTextField;
 
-@SuppressWarnings("serial")
-public class View_profile extends JFrame implements ActionListener
-{
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+
+public class View_profile implements ActionListener {
+
 	public static String nome;
+	public JFrame frmViewProfile;
 	private JPanel contentPane;
 	private JTextField fldNome;
 	private JTextField fldSenha;
 	private JTextField fldContato;
 	private JTextField fldEmail;
-	Button btnVoltar,btnSair;
+	private Button btnVoltar,btnSair;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					View_profile window = new View_profile();
+					window.frmViewProfile.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 
 	public View_profile(String n)
 	{
 		nome=n;		
 	}
+	
+	/**
+	 * Create the application.
+	 */
+	public View_profile() {
+		initialize();
+	}
 
 	/**
-	 * Create the frame.
+	 * Initialize the contents of the frame.
 	 */
-	public View_profile() 
-	{
+	private void initialize() {
 
 		/* INICIALIZANDO OS COMPONENTES */
 
 		//Criando os componentes
+		frmViewProfile = new JFrame();
 		contentPane = new JPanel();
 		JLabel lblPerfil = new JLabel("Perfil");
 		JLabel lblNome = new JLabel("Nome");
@@ -53,22 +77,21 @@ public class View_profile extends JFrame implements ActionListener
 		fldEmail = new JTextField();
 		btnVoltar = new Button("Voltar");
 		btnSair = new Button("Sair");
-
-		/*------------------------------------------------*/
-
+		
+		
 		/* CONFIGURANDO DOS COMPONENTES */
 
 		//Configurando o frame
-		setTitle("Perfil");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 360, 302);
-		setContentPane(contentPane);
-		setResizable(false);
-
+		frmViewProfile.setTitle("Perfil");
+		frmViewProfile.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmViewProfile.setBounds(100, 100, 360, 302);
+		frmViewProfile.setContentPane(contentPane);
+		frmViewProfile.setResizable(false);
+		
 		//Configurando o contentPane		
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(null);
-
+		
 		//Configurando o label perfil
 		lblPerfil.setFont(new Font("Tahoma", Font.PLAIN, 36));
 		lblPerfil.setBounds(152, 11, 109, 44);		
@@ -108,7 +131,7 @@ public class View_profile extends JFrame implements ActionListener
 		fldEmail.setBounds(101, 182, 200, 20);
 		fldEmail.setEditable(false);		
 		fldEmail.setColumns(10);
-
+		
 		//Configurando o botão voltar
 		btnVoltar.addActionListener(this);
 		btnVoltar.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -118,10 +141,7 @@ public class View_profile extends JFrame implements ActionListener
 		btnSair.addActionListener(this);
 		btnSair.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnSair.setBounds(172, 229, 89, 23);
-
-		/*------------------------------------------------------*/
-
-
+		
 		/* Adicionando os componentes do contentPane */
 
 		contentPane.add(lblPerfil);
@@ -135,9 +155,7 @@ public class View_profile extends JFrame implements ActionListener
 		contentPane.add(fldEmail);
 		contentPane.add(btnVoltar);
 		contentPane.add(btnSair);
-
-		/*----------------------------------------------------------------*/
-
+		
 		try
 		{
 			Class.forName("org.mariadb.jdbc.Driver");
@@ -161,44 +179,22 @@ public class View_profile extends JFrame implements ActionListener
 		{
 			se.printStackTrace();
 		}
-
-
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent ae)
-	{
+	public void actionPerformed(ActionEvent ae) {
 		Button bb=(Button)ae.getSource();
 		if(bb==btnVoltar)
 		{
-			dispose();
-			Login_Welcome m = new Login_Welcome();
-			m.setVisible(true);
+			frmViewProfile.dispose();
+			Login_welcome m = new Login_welcome();
+			m.frmLoginWelcome.setVisible(true);
 		}
 		if(bb==btnSair)
 		{
 			System.exit(0);
 		}
-
+				
 	}
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) 
-	{
-		EventQueue.invokeLater(new Runnable() 
-		{
-			public void run() 
-			{
-				try {
-					View_profile frame = new View_profile();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	
 }
-

@@ -1,4 +1,4 @@
-package polimorfismo;
+package polimorfismo.exemplo1;
 
 public class ContaFisica extends Conta{
 	private String titular = null;

@@ -1,4 +1,4 @@
-package exercíciosPropostos.heranca;
+package exercíciosPropostos.interfaces;
 
 public abstract class Funcionario extends Pessoa {
 	protected int tempoDeServico, matricula;
@@ -22,8 +22,6 @@ public abstract class Funcionario extends Pessoa {
 	public void setSalarioBase(double salarioBase) {
 		this.salarioBase = salarioBase;
 	}
-	
-	public abstract boolean adicionaProjeto(Projeto projeto);
 	
 	public abstract void computaSalario();
 	

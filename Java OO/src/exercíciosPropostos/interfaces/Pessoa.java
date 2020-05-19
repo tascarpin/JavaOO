@@ -1,4 +1,4 @@
-package exercíciosPropostos.heranca;
+package exercíciosPropostos.interfaces;
 
 public class Pessoa {
 	private String nome, cpf;

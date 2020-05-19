@@ -1,4 +1,4 @@
-package loginGUI;
+package loginGUI.exemplo;
 
 import java.awt.Button;
 import java.awt.Component;
@@ -21,7 +21,7 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 @SuppressWarnings("serial")
-public class Edit_proile extends JFrame implements ActionListener
+public class Edit_profile extends JFrame implements ActionListener
 {
 	public static String nome;
 	private JPanel contentPane;
@@ -51,10 +51,15 @@ public class Edit_proile extends JFrame implements ActionListener
 		});
 	}
 
+	public Edit_profile(String n)
+	{
+		nome=n;
+	}
+	
 	/**
 	 * Create the frame.
 	 */
-	public Edit_proile() 
+	public Edit_profile() 
 	{
 		setTitle("Editar");
 		setResizable(false);
@@ -152,11 +157,6 @@ public class Edit_proile extends JFrame implements ActionListener
 		}
 
 
-	}
-	
-	public Edit_proile(String n)
-	{
-		nome=n;
 	}
 	
 	@Override
