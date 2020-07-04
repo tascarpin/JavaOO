@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:PapyrusJava="http://www.eclipse.org/papyrus/PapyrusJava/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:standard="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_jcwI4KN9EeqxKL_2fSRqrg" name="exemplo1">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_jeaVwKN9EeqxKL_2fSRqrg">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_lqaTQKN9EeqxKL_2fSRqrg" name="Java OO">
+      <packagedElement xmi:type="uml:Package" xmi:id="_lsYCIKN9EeqxKL_2fSRqrg" name="associacao">
+        <packagedElement xmi:type="uml:Package" xmi:id="_lsYpMKN9EeqxKL_2fSRqrg" name="agregacao">
+          <packagedElement xmi:type="uml:Package" xmi:id="_lsZQQKN9EeqxKL_2fSRqrg" name="exemplo1">
+            <packagedElement xmi:type="uml:Class" xmi:id="_lsaeYKN9EeqxKL_2fSRqrg" name="Automovel" visibility="public">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_lw2ScKN9EeqxKL_2fSRqrg" name="modelo" visibility="private" type="_lsbsgKN9EeqxKL_2fSRqrg" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_lxB4oKN9EeqxKL_2fSRqrg" name="motor" visibility="private" type="_lw5VwKN9EeqxKL_2fSRqrg" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_lxKbgKN9EeqxKL_2fSRqrg" name="motorista" visibility="private" type="_lxDGwKN9EeqxKL_2fSRqrg" isUnique="false"/>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_lxoVkKN9EeqxKL_2fSRqrg" name="Automovel" specification="_lxaTIKN9EeqxKL_2fSRqrg">
+                <language>JAVA</language>
+                <body>&#xD;
+    this(modelo, potenciaMotor);&#xD;
+    this.motorista = motorista;&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_lxz7wKN9EeqxKL_2fSRqrg" name="Automovel" specification="_lxqKwKN9EeqxKL_2fSRqrg">
+                <language>JAVA</language>
+                <body>&#xD;
+    this();&#xD;
+    this.modelo = modelo;&#xD;
+    /*
+		 * Um objeto do tipo Motor sendo instânciado dentro do método construtor
+		 * da classe Automovel sendo assim será gerada uma associção do tipo
+		 * composição, pois o objeto Motor existirá somente enquanto o objeto
+		 * Automovel existir.
+		 */&#xD;
+    this.motor = new Motor(potenciaMotor);&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_lx9swKN9EeqxKL_2fSRqrg" name="Automovel" specification="_lx2YAKN9EeqxKL_2fSRqrg">
+                <language>JAVA</language>
+                <body>&#xD;
+    super();&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_lyDzYKN9EeqxKL_2fSRqrg" name="getModelo" specification="_lyAJAKN9EeqxKL_2fSRqrg">
+                <language>JAVA</language>
+                <body>&#xD;
+    return this.modelo;&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_lyJ6AKN9EeqxKL_2fSRqrg" name="setModelo" specification="_lyGPoKN9EeqxKL_2fSRqrg">
+                <language>JAVA</language>
+                <body>&#xD;
+    this.modelo = modelo;&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_lyROwKN9EeqxKL_2fSRqrg" name="getMotor" specification="_lyMWQKN9EeqxKL_2fSRqrg">
+                <language>JAVA</language>
+                <body>&#xD;
+    return this.motor;&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_lya_wKN9EeqxKL_2fSRqrg" name="setMotor" specification="_lyUSEKN9EeqxKL_2fSRqrg">
+                <language>JAVA</language>
+                <body>&#xD;
+    this.motor = motor;&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_lyhtcKN9EeqxKL_2fSRqrg" name="getMotorista" specification="_lydcAKN9EeqxKL_2fSRqrg">
+                <language>JAVA</language>
+                <body>&#xD;
+    return motorista;&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_lypCMKN9EeqxKL_2fSRqrg" name="setMotorista" specification="_lykwwKN9EeqxKL_2fSRqrg">
+                <language>JAVA</language>
+                <body>&#xD;
+    this.motorista = motorista;&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_lytToKN9EeqxKL_2fSRqrg" name="toString" specification="_lyq3YKN9EeqxKL_2fSRqrg">
+                <language>JAVA</language>
+                <body>&#xD;
+    StringBuilder builder = new StringBuilder();&#xD;
+    builder.append(&quot;Automovel [modelo=&quot;);&#xD;
+    builder.append(modelo);&#xD;
+    builder.append(&quot;, motor=&quot;);&#xD;
+    builder.append(motor);&#xD;
+    builder.append(&quot;, motorista=&quot;);&#xD;
+    builder.append(motorista);&#xD;
+    builder.append(&quot;]&quot;);&#xD;
+    return builder.toString();&#xD;
+</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_lxaTIKN9EeqxKL_2fSRqrg" name="Automovel" visibility="public" method="_lxoVkKN9EeqxKL_2fSRqrg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_lxhA0KN9EeqxKL_2fSRqrg" name="modelo" type="_lsbsgKN9EeqxKL_2fSRqrg"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_lxjdEKN9EeqxKL_2fSRqrg" name="potenciaMotor">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+                </ownedParameter>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_lxmgYKN9EeqxKL_2fSRqrg" name="motorista" type="_lxDGwKN9EeqxKL_2fSRqrg"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_lxqKwKN9EeqxKL_2fSRqrg" name="Automovel" visibility="public" method="_lxz7wKN9EeqxKL_2fSRqrg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_lxxfgKN9EeqxKL_2fSRqrg" name="modelo" type="_lsbsgKN9EeqxKL_2fSRqrg"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_lxytoKN9EeqxKL_2fSRqrg" name="potenciaMotor">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_lx2YAKN9EeqxKL_2fSRqrg" name="Automovel" visibility="public" method="_lx9swKN9EeqxKL_2fSRqrg"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_lyAJAKN9EeqxKL_2fSRqrg" name="getModelo" visibility="public" method="_lyDzYKN9EeqxKL_2fSRqrg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_lyClQKN9EeqxKL_2fSRqrg" type="_lsbsgKN9EeqxKL_2fSRqrg" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_lyGPoKN9EeqxKL_2fSRqrg" name="setModelo" visibility="public" method="_lyJ6AKN9EeqxKL_2fSRqrg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_lyIr4KN9EeqxKL_2fSRqrg" name="modelo" type="_lsbsgKN9EeqxKL_2fSRqrg"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_lyMWQKN9EeqxKL_2fSRqrg" name="getMotor" visibility="public" method="_lyROwKN9EeqxKL_2fSRqrg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_lyQAoKN9EeqxKL_2fSRqrg" type="_lw5VwKN9EeqxKL_2fSRqrg" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_lyUSEKN9EeqxKL_2fSRqrg" name="setMotor" visibility="public" method="_lya_wKN9EeqxKL_2fSRqrg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_lyX8cKN9EeqxKL_2fSRqrg" name="motor" type="_lw5VwKN9EeqxKL_2fSRqrg"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_lydcAKN9EeqxKL_2fSRqrg" name="getMotorista" visibility="public" method="_lyhtcKN9EeqxKL_2fSRqrg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_lyf4QKN9EeqxKL_2fSRqrg" type="_lxDGwKN9EeqxKL_2fSRqrg" direction="return"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_lykwwKN9EeqxKL_2fSRqrg" name="setMotorista" visibility="public" method="_lypCMKN9EeqxKL_2fSRqrg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_lyn0EKN9EeqxKL_2fSRqrg" name="motorista" type="_lxDGwKN9EeqxKL_2fSRqrg"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_lyq3YKN9EeqxKL_2fSRqrg" name="toString" visibility="public" method="_lytToKN9EeqxKL_2fSRqrg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_lysskKN9EeqxKL_2fSRqrg" type="_lsbsgKN9EeqxKL_2fSRqrg" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_lw5VwKN9EeqxKL_2fSRqrg" name="Motor" visibility="public">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_F7YgQKN-EeqxKL_2fSRqrg" name="potencia" visibility="private" isUnique="false">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+              </ownedAttribute>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_F7fN8KN-EeqxKL_2fSRqrg" name="Motor" specification="_F7aVcKN-EeqxKL_2fSRqrg">
+                <language>JAVA</language>
+                <body>&#xD;
+    this();&#xD;
+    this.potencia = potencia;&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_F7ktgKN-EeqxKL_2fSRqrg" name="Motor" specification="_F7f1AKN-EeqxKL_2fSRqrg">
+                <language>JAVA</language>
+                <body>&#xD;
+    super();&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_F7l7oKN-EeqxKL_2fSRqrg" name="getPotencia" specification="_F7lUkKN-EeqxKL_2fSRqrg">
+                <language>JAVA</language>
+                <body>&#xD;
+    return this.potencia;&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_F7nJwKN-EeqxKL_2fSRqrg" name="setPotencia" specification="_F7misKN-EeqxKL_2fSRqrg">
+                <language>JAVA</language>
+                <body>&#xD;
+    this.potencia = potencia;&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_F7oX4KN-EeqxKL_2fSRqrg" name="toString" specification="_F7nw0KN-EeqxKL_2fSRqrg">
+                <language>JAVA</language>
+                <body>&#xD;
+    StringBuilder builder = new StringBuilder();&#xD;
+    builder.append(&quot;Motor [potencia=&quot;);&#xD;
+    builder.append(potencia);&#xD;
+    builder.append(&quot;]&quot;);&#xD;
+    return builder.toString();&#xD;
+</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_F7aVcKN-EeqxKL_2fSRqrg" name="Motor" visibility="public" method="_F7fN8KN-EeqxKL_2fSRqrg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_F7em4KN-EeqxKL_2fSRqrg" name="potencia">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_F7f1AKN-EeqxKL_2fSRqrg" name="Motor" visibility="public" method="_F7ktgKN-EeqxKL_2fSRqrg"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_F7lUkKN-EeqxKL_2fSRqrg" name="getPotencia" visibility="public" method="_F7l7oKN-EeqxKL_2fSRqrg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_F7lUkaN-EeqxKL_2fSRqrg" direction="return">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_F7misKN-EeqxKL_2fSRqrg" name="setPotencia" visibility="public" method="_F7nJwKN-EeqxKL_2fSRqrg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_F7misaN-EeqxKL_2fSRqrg" name="potencia">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+                </ownedParameter>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_F7nw0KN-EeqxKL_2fSRqrg" name="toString" visibility="public" method="_F7oX4KN-EeqxKL_2fSRqrg">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_F7nw0aN-EeqxKL_2fSRqrg" type="_lsbsgKN9EeqxKL_2fSRqrg" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_lxDGwKN9EeqxKL_2fSRqrg" name="Motorista"/>
+            <packagedElement xmi:type="uml:Abstraction" xmi:id="_Ref-IKN-EeqxKL_2fSRqrg" client="_lsaeYKN9EeqxKL_2fSRqrg" supplier="_lw5VwKN9EeqxKL_2fSRqrg"/>
+            <packagedElement xmi:type="uml:Realization" xmi:id="_wU5DgKN-EeqxKL_2fSRqrg" client="_lsaeYKN9EeqxKL_2fSRqrg" supplier="_lw5VwKN9EeqxKL_2fSRqrg"/>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_lsbFcKN9EeqxKL_2fSRqrg" name="java">
+      <packagedElement xmi:type="uml:Package" xmi:id="_lsbFcaN9EeqxKL_2fSRqrg" name="java">
+        <packagedElement xmi:type="uml:Package" xmi:id="_lsbFcqN9EeqxKL_2fSRqrg" name="lang">
+          <packagedElement xmi:type="uml:Class" xmi:id="_lsbsgKN9EeqxKL_2fSRqrg" name="String"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_lrf4YKN9EeqxKL_2fSRqrg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_lriUoKN9EeqxKL_2fSRqrg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/PapyrusJava/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PapyrusJava_PROFILES/PapyrusJava.profile.uml#_j9REUByGEduN1bTiWJ0lyw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_lsGVUKN9EeqxKL_2fSRqrg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_lsG8YKN9EeqxKL_2fSRqrg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/Codegen/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://Codegen_PROFILES/Codegen.profile.uml#_fPDsIBa-EearhdjjJ6cVzQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_lsTwsKN9EeqxKL_2fSRqrg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_lsU-0KN9EeqxKL_2fSRqrg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Model>
+  <PapyrusJava:External xmi:id="_lwyBAKN9EeqxKL_2fSRqrg" name="java.lang.String" base_Classifier="_lsbsgKN9EeqxKL_2fSRqrg"/>
+  <PapyrusJava:External xmi:id="_lw_cYKN9EeqxKL_2fSRqrg" name="Motor" base_Classifier="_lw5VwKN9EeqxKL_2fSRqrg"/>
+  <PapyrusJava:External xmi:id="_lxH_QKN9EeqxKL_2fSRqrg" name="Motorista" base_Classifier="_lxDGwKN9EeqxKL_2fSRqrg"/>
+  <standard:Create xmi:id="_lxd9gKN9EeqxKL_2fSRqrg" base_BehavioralFeature="_lxaTIKN9EeqxKL_2fSRqrg"/>
+  <standard:Create xmi:id="_lxt1IKN9EeqxKL_2fSRqrg" base_BehavioralFeature="_lxqKwKN9EeqxKL_2fSRqrg"/>
+  <standard:Create xmi:id="_lx6pcKN9EeqxKL_2fSRqrg" base_BehavioralFeature="_lx2YAKN9EeqxKL_2fSRqrg"/>
+  <standard:Create xmi:id="_F7dYwKN-EeqxKL_2fSRqrg" base_BehavioralFeature="_F7aVcKN-EeqxKL_2fSRqrg"/>
+  <standard:Create xmi:id="_F7i4UKN-EeqxKL_2fSRqrg" base_BehavioralFeature="_F7f1AKN-EeqxKL_2fSRqrg"/>
+</xmi:XMI>

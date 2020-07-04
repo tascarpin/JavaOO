@@ -100,7 +100,7 @@ public class Login implements ActionListener {
 
 		//Configurando label senha
 		lblSenha.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblSenha.setBounds(57, 137, 115, 29);
+		lblSenha.setBounds(57, 137, 78, 29);
 
 		//Configurando textField senha
 		fldSenha.setBounds(162, 141, 160, 29);
@@ -109,7 +109,7 @@ public class Login implements ActionListener {
 		//Configurando botão registrar
 		btnRegistrar.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		btnRegistrar.setBounds(73, 212, 89, 23);
-		btnRegistrar.addActionListener(this);
+		btnRegistrar.addActionListener(this); //Quando implementamos a interface actionListner podemos podemos chamar o actionPerfomand pelo this
 
 
 		//Configurando botão login	
@@ -151,7 +151,7 @@ public class Login implements ActionListener {
 
 			try
 			{
-				Class.forName("org.mariadb.jdbc.Driver");
+				Class.forName("org.mariadb.jdbc.Driver"); //A partir do JDBC 4, que está presente no Java 6, esse passo não é mais necessário.
 				Connection connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/java_oo?user=root&password=");
 				Statement st = connection.createStatement();				
 				ResultSet rs =st.executeQuery("select * from perfil where nome='" + fldNome.getText() + "' and senha='"+ String.copyValueOf(fldSenha.getPassword()) + "'");
